@@ -16,6 +16,8 @@ class Piglatinizer
 
       word.downcase == word ? pig : pig.capitalize
     end.join(' ')
+
+    binding.pry
   end
 
 end
