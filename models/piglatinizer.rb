@@ -5,6 +5,8 @@ class PigLatinizer
 
     phrase.split.map do |word|
       word.chars.first.match(/[^aeiouAEIOU]/) ? word.insert(-1, 'ay') : word.insert(-1, 'way')
+
+      word.downcase == word ? word : word.capitalize
     end.join(' ')
 
 
