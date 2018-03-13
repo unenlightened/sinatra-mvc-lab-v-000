@@ -13,8 +13,6 @@ class PigLatinizer
 
       word.downcase == word ? pig : pig.capitalize
     end.join(' ')
-
-    binding.pry
   end
 
 end
