@@ -12,7 +12,7 @@ class Piglatinizer
         pig.shift
       end
 
-      word.chars.first.match(/[^aeiouAEIOU]) ? pig.insert(-1, 'ay') : pig.insert (-1, 'way')
+      word.chars.first.match(/[^aeiouAEIOU]/) ? pig.insert(-1, 'ay') : pig.insert (-1, 'way')
 
       word.downcase == word ? pig : pig.capitalize
     end.join(' ')
