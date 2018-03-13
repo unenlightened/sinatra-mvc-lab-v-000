@@ -6,15 +6,16 @@ class Piglatinizer
   end
 
   def piggy
-    @phrase.split.each do |word|
-      i = 0
-      while word[i] != (/[aeiou]/)
-        word[]
+    @phrase.split.map do |word|
 
-        word.insert(-1, 'way')
+      while word.chars.first.match(/[^aeiouAEIOU]/)
+        pig = word.chars.push(word.chars.first)
+        pig.shift
+      end
 
+      word.chars.first.match(/[^aeiouAEIOU]]) ? pig.insert(-1, 'ay') : pig.insert (-1, 'way')
 
-      word.downcase == word ? word : word.capitalize
+      word.downcase == word ? pig : pig.capitalize
     end.join(' ')
   end
 
