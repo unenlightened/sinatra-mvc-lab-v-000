@@ -4,7 +4,7 @@ class PigLatinizer
   def piglatinize(phrase)
 
     phrase.split.map do |word|
-      word.reverse
+      word.chars.first.match(/[^aeiouAEIOU]/) ? pig.insert(-1, 'ay') : pig.insert(-1, 'way')
     end.join(' ')
 
 
